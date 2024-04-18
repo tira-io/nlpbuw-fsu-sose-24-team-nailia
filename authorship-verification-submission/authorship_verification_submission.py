@@ -2,7 +2,6 @@ from pathlib import Path
 
 from tira.rest_api_client import Client
 from tira.third_party_integrations import get_output_directory
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 if __name__ == "__main__":
 
@@ -39,14 +38,3 @@ if __name__ == "__main__":
     prediction.to_json(
         Path(output_directory) / "predictions.jsonl", orient="records", lines=True
     )
-
-    # calculating the evaluation metrics
-    accuracy = accuracy_score(targets_validation["generated"], prediction["generated"])
-    precision = precision_score(targets_validation["generated"], prediction["generated"])
-    recall = recall_score(targets_validation["generated"], prediction["generated"])
-    f1 = f1_score(targets_validation["generated"], prediction["generated"])
-    print(f"Accuracy: {accuracy}")
-    print(f"Precision: {precision}")
-    print(f"Recall: {recall}")
-    print(f"F1: {f1}")
-
