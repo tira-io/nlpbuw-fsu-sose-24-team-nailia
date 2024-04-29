@@ -32,10 +32,6 @@ def train_LR():
 
 tira = Client()
 
-# Loading train data
-text_train = tira.pd.inputs("nlpbuw-fsu-sose-24", "authorship-verification-train-20240408-training")
-targets_train = tira.pd.truths("nlpbuw-fsu-sose-24", "authorship-verification-train-20240408-training")
-
 # Loading validation data (automatically replaced by test data when run on tira)
 text_validation = tira.pd.inputs("nlpbuw-fsu-sose-24", "authorship-verification-validation-20240408-training")
 targets_validation = tira.pd.truths("nlpbuw-fsu-sose-24", "authorship-verification-validation-20240408-training")
