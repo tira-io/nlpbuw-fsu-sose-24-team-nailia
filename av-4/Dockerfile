@@ -6,7 +6,7 @@ ADD author-identity.py /code/author-identity.py
 ADD requirements.txt /code/requirements.txt
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /code/requirements.txt
 
 # Command to run the Python script
 CMD ["python3", "author-identity.py"]
