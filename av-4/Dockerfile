@@ -1,12 +1,8 @@
 # docker build -t fschlatt/authorship-verification-trivial:0.0.1 .
-FROM fschlatt/natural-language-processing-exercises:0.0.1
+FROM nelliemirz/buw-nlp-bert-base-uncased:latest
 
 # Copy the current directory contents into the container at /app
 ADD author-identity.py /code/author-identity.py
-ADD requirements.txt /code/requirements.txt
-
-# Install dependencies
-RUN pip install --no-cache-dir -r /code/requirements.txt
 
 # Command to run the Python script
 ENTRYPOINT ["python3", "/code/author-identity.py"]

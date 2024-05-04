@@ -14,10 +14,9 @@ if __name__ == "__main__":
     )
 
     # Load BERT model and tokenizer
-    model_name = 'bert-base-uncased'
-    tokenizer = BertTokenizer.from_pretrained(model_name)
-    model = BertForSequenceClassification.from_pretrained(model_name)
-
+    model_name = "/code/bert-base-uncased"
+    tokenizer = BertTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = BertForSequenceClassification.from_pretrained(model_name, local_files_only=True)
     # Tokenize and encode the text data
     max_length = 128
     inputs_validation = tokenizer(text_validation['text'].tolist(), padding=True, truncation=True, max_length=max_length, return_tensors="pt")
