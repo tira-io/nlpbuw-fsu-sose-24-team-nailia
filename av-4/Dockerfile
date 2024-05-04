@@ -9,4 +9,4 @@ ADD requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir -r /code/requirements.txt
 
 # Command to run the Python script
-ENTRYPOINT ["python3", "author-identity.py"]
+ENTRYPOINT ["python3", "/code/author-identity.py"]
