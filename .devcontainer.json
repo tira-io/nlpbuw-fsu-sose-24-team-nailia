@@ -1,5 +1,5 @@
 {
-  "image": "fschlatt/natural-language-processing-exercises:0.0.1",
+  "image": "nelliemirz/buw-nlp-bert-base-uncased:latest",
   "customizations": {
     "vscode": {
       "extensions": [
